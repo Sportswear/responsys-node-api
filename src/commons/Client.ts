@@ -1,13 +1,15 @@
-import * as rest from 'rest';
-import { SecureClientInterceptor } from '../auth/SecureClientInterceptor';
-import * as retry from 'rest/interceptor/retry';
 import * as errorCode from 'rest/interceptor/errorCode';
+import * as rest from 'rest';
+import * as retry from 'rest/interceptor/retry';
 import * as timeout from 'rest/interceptor/timeout';
+import { DebugInterceptor } from '../debug/DebugInterceptor';
 import { Options } from './Options';
 import { PathInterceptor } from '../auth/PathInterceptor';
+import { SecureClientInterceptor } from '../auth/SecureClientInterceptor';
 
 export class Client {
 
+  private debugInterceptor = new DebugInterceptor().get();
   private secureInterceptor = new SecureClientInterceptor().get();
   private pathInterceptor = new PathInterceptor().get();
   private options;
@@ -30,6 +32,7 @@ export class Client {
     .wrap(errorCode, this.options.errorOptions)
     .wrap(retry, this.options.retryOptions)
     .wrap(timeout, this.options.timeoutOptions)
+    .wrap(this.debugInterceptor)
     .wrap(this.pathInterceptor)
     .wrap(this.secureInterceptor);
 

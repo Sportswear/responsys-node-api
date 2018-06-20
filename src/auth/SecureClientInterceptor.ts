@@ -15,12 +15,13 @@ export class SecureClientInterceptor {
         if (!this.authCache.isLoaded()) {
           const result = await this.authentication.signin(new AuthenticationRequest());
           request.headers.Authorization = this.authCache.getToken();
-          
+
           return request;
         }
 
         return request;
       },
+
       success: async (response, config, meta) => {
         const status = response.status || { code: 408 };
         if (status.code === 401 || status.code === 403) {
@@ -33,6 +34,7 @@ export class SecureClientInterceptor {
 
         return response;
       },
+
       error: (response, config, meta) => {
         return response;
       }

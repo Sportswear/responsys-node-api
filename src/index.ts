@@ -10,5 +10,3 @@ export { MergeEmail } from './merge/MergeEmail';
 export { MergeTriggerEmailRecordData } from './merge/MergeTriggerEmailRecordData';
 export { MergeTriggerEmailRequest } from './merge/MergeTriggerEmailRequest';
 export { MergeTriggerRecordData } from './merge/MergeTriggerRecordData';
-
-

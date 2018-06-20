@@ -1,4 +1,5 @@
 import * as datastore from 'node-persist';
+
 import {
   KEY_ENDPOINT,
   KEY_TOKEN,
@@ -37,5 +38,4 @@ export class AuthCache {
   clear(): void {
     datastore.clearSync();
   }
-
 }

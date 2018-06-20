@@ -2,7 +2,7 @@ import * as interceptor from 'rest/interceptor';
 import { AuthCache } from '../auth/AuthCache';
 
 export class AuthInterceptor {
-  
+
   private authCache = new AuthCache();
 
   public get() {
@@ -13,5 +13,4 @@ export class AuthInterceptor {
       }
     });
   }
-
 }

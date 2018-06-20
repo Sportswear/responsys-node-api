@@ -1,12 +1,14 @@
-import * as rest from 'rest';
-import { AuthenticationRequest } from './AuthenticationRequest';
-import { RefreshRequest } from './RefreshRequest';
-import { AuthInterceptor } from './AuthenticationInterceptor';
 import * as errorCode from 'rest/interceptor/errorCode';
+import * as rest from 'rest';
+import { AuthInterceptor } from './AuthenticationInterceptor';
+import { AuthenticationRequest } from './AuthenticationRequest';
+import { DebugInterceptor } from '../debug/DebugInterceptor';
+import { RefreshRequest } from './RefreshRequest';
 
 export class Authentication {
 
   private authInterceptor = new AuthInterceptor().get();
+  private debugInterceptor = new DebugInterceptor().get();
 
   /**
    * Signin takes all necessary parameters to handle authentication. 
@@ -25,7 +27,7 @@ export class Authentication {
    * @param authRequest Encapsulates username, password and endpoint.
    */
   public signin(authRequest: AuthenticationRequest): rest.ResponsePromise {
-    const client = rest.wrap(this.authInterceptor);
+    const client = rest.wrap(this.debugInterceptor).wrap(this.authInterceptor);
 
     return client(authRequest);
   }
@@ -39,8 +41,9 @@ export class Authentication {
   public refresh(authRefresh: RefreshRequest): rest.ResponsePromise {
     const client = rest
       .wrap(errorCode)
+      .wrap(this.debugInterceptor)
       .wrap(this.authInterceptor);
-      
+
     return client(authRefresh);
   }
 }

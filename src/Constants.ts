@@ -2,7 +2,7 @@ export const TYPE_PASSWORD = 'password';
 
 export const ERROR = 'Missing configuration parameters for Responsys connection. ';
 export const KEY_TOKEN = 'last_token';
-export  const KEY_ENDPOINT = 'last_endpoint';
+export const KEY_ENDPOINT = 'last_endpoint';
 export const KEY_ISSUED_AT = 'last_issued_at';
 export const DEFAULT_STORE = 'ResponsysAuthCache.db';
 
