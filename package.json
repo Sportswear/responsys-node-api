@@ -12,7 +12,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "compile": "tsc --outDir ./build",
-    "prepublish": "yarn compile",
+    "prepare": "yarn compile",
     "test":
       "NODE_ENV=test mocha -r ts-node/register src/**/*.test.ts --timeout=60000"
   },
