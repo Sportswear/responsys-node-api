@@ -1,6 +1,6 @@
 {
   "name": "@sportswear/responsys-node-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Responsys REST API connector",
   "author": "Lisandro Pavetti",
   "license": "MIT",
@@ -13,18 +13,15 @@
   "scripts": {
     "compile": "tsc --outDir ./build",
     "prepublish": "yarn compile",
-    "test": "NODE_ENV=test mocha -r ts-node/register src/**/*.test.ts --timeout=60000"
+    "test":
+      "NODE_ENV=test mocha -r ts-node/register src/**/*.test.ts --timeout=60000"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comparaonline/responsys-node-api.git"
   },
-  "keywords": [
-    "responsys"
-  ],
-  "files": [
-    "build"
-  ],
+  "keywords": ["responsys"],
+  "files": ["build"],
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/config": "^0.0.33",
