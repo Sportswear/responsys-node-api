@@ -1,5 +1,5 @@
 {
-  "name": "@comparaonline/responsys-node-api",
+  "name": "@sportswear/responsys-node-api",
   "version": "1.0.0",
   "description": "Responsys REST API connector",
   "author": "Lisandro Pavetti",
