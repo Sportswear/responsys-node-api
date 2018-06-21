@@ -6,8 +6,8 @@ export class MergeTriggerRecordData  {
   mergeTriggerRecords;
   fieldNames;
 
-  constructor(mergeTriggerEmailRecordData: Set<MergeTriggerEmailRecordData>) {
+  constructor(mergeTriggerEmailRecordData: Set<MergeTriggerEmailRecordData>, fieldNames: string[] = FIELD_NAMES) {
     this.mergeTriggerRecords = Array.from(mergeTriggerEmailRecordData);
-    this.fieldNames = FIELD_NAMES;
+    this.fieldNames = fieldNames;
   }
 }
