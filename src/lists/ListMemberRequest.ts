@@ -1,7 +1,7 @@
 import { CONTENT_TYPE_JSON, HTTP_METHOD_GET } from './../Constants';
 import { Request } from '../commons/Request';
 
-export class ListMembersRequest extends Request {
+export class ListMemberRequest extends Request {
   constructor(list: string, attribute: string, value: string, fields: string[] = ['all']) {
     super(
       null,

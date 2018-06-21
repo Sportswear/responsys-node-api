@@ -3,10 +3,12 @@ export { Authentication } from './auth/Authentication';
 export { AuthenticationRequest } from './auth/AuthenticationRequest';
 export { Campaign } from './campaigns/Campaign';
 export { EmailCampaignRequest } from './campaigns/EmailCampaignRequest';
-export { ListMembersRequest } from './lists/ListMembersRequest';
+export { ListMemberRequest } from './lists/ListMemberRequest';
 export { Lists } from './lists/Lists';
 export { ListsRequest } from './lists/ListsRequest';
 export { MergeEmail } from './merge/MergeEmail';
+export { MergeListMembersRecordData } from './lists/MergeListMembersRecordData'
+export { MergeListMembersRequest } from './lists/MergeListMembersRequest'
 export { MergeTriggerEmailRecordData } from './merge/MergeTriggerEmailRecordData';
 export { MergeTriggerEmailRequest } from './merge/MergeTriggerEmailRequest';
 export { MergeTriggerRecordData } from './merge/MergeTriggerRecordData';
