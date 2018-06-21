@@ -3,6 +3,7 @@ export { Authentication } from './auth/Authentication';
 export { AuthenticationRequest } from './auth/AuthenticationRequest';
 export { Campaign } from './campaigns/Campaign';
 export { EmailCampaignRequest } from './campaigns/EmailCampaignRequest';
+export { ListMembersRequest } from './lists/ListMembersRequest';
 export { Lists } from './lists/Lists';
 export { ListsRequest } from './lists/ListsRequest';
 export { MergeEmail } from './merge/MergeEmail';

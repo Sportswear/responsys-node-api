@@ -1,6 +1,6 @@
 {
   "name": "@sportswear/responsys-node-api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Responsys REST API connector",
   "author": "Lisandro Pavetti",
   "license": "MIT",
