@@ -1,4 +1,5 @@
 import * as errorCode from 'rest/interceptor/errorCode';
+import * as mime from 'rest/interceptor/mime';
 import * as rest from 'rest';
 import { AuthInterceptor } from './AuthenticationInterceptor';
 import { AuthenticationRequest } from './AuthenticationRequest';
@@ -27,7 +28,10 @@ export class Authentication {
    * @param authRequest Encapsulates username, password and endpoint.
    */
   public signin(authRequest: AuthenticationRequest): rest.ResponsePromise {
-    const client = rest.wrap(this.debugInterceptor).wrap(this.authInterceptor);
+    const client = rest
+      .wrap(mime)
+      .wrap(this.debugInterceptor)
+      .wrap(this.authInterceptor);
 
     return client(authRequest);
   }
@@ -41,6 +45,7 @@ export class Authentication {
   public refresh(authRefresh: RefreshRequest): rest.ResponsePromise {
     const client = rest
       .wrap(errorCode)
+      .wrap(mime)
       .wrap(this.debugInterceptor)
       .wrap(this.authInterceptor);
 

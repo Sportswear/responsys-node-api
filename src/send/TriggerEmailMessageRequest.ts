@@ -3,18 +3,11 @@ import { RecipientData } from './RecipientData';
 import { CONTENT_TYPE_JSON } from './../Constants';
 
 export class TriggerEmailMessageRequest extends Request {
-
   constructor(recipients: Set<RecipientData>, campaign: string) {
-    const service = `/rest/api/v1.3/campaigns/${campaign}/email`;
-
-    const header = {
-      'content-type': CONTENT_TYPE_JSON
-    };
-
-    const entity = JSON.stringify({
+    super({
       recipientData: Array.from(recipients)
+    }, `/rest/api/v1.3/campaigns/${campaign}/email`, {
+      'Content-Type': CONTENT_TYPE_JSON
     });
-
-    super(entity, service, header);
   }
 }

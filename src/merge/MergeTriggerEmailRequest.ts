@@ -6,19 +6,12 @@ import {
 } from './../Constants';
 
 export class MergeTriggerEmailRequest extends Request {
-
   constructor(mergeTriggerRecordData: MergeTriggerRecordData, campaign: string) {
-    const service = `/rest/api/v1.3/campaigns/${campaign}/email`;
-
-    const header = {
-      'content-type': CONTENT_TYPE_JSON
-    };
-
-    const entity = JSON.stringify({
+    super({
       mergeTriggerRecordData,
       mergeRule: MERGER_RULE
+    }, `/rest/api/v1.3/campaigns/${campaign}/email`, {
+      'Content-Type': CONTENT_TYPE_JSON
     });
-
-    super(entity, service, header);
   }
 }

@@ -11,7 +11,7 @@ import { AuthCache } from '../../auth/AuthCache';
 const TEST_URL = 'http://127.0.0.1:3000';
 const TEST_RESULT = 'result_ok';
 const TEST_HEADER = {
-  'content-type': 'application/json'
+  'Content-Type': 'application/json'
 };
 
 const RESPONSE = {
@@ -59,7 +59,7 @@ describe('Client', () => {
     authCache.clear();
     authCache.set(RESPONSE);
     errorCount = 0;
-    request = new Request('', TEST_URL, TEST_HEADER, 'GET');
+    request = new Request(null, TEST_URL, TEST_HEADER, 'GET');
   });
 
   afterEach((done) => {

@@ -4,18 +4,18 @@ import {
 } from '../Constants';
 
 const HEADERS = {
-  'content-type': CONTENT_TYPE_URLENCODED
+  'Content-Type': CONTENT_TYPE_URLENCODED
 };
 
 export class Request {
 
-  private entity: string;
+  private entity: object | null;
   private method: string;
   private headers: string;
   private path: string;
 
   constructor(
-    entity: string, path: string, headers: any = HEADERS, method: string = HTTP_METHOD_POST) {
+    entity: object | null, path: string, headers: any = HEADERS, method: string = HTTP_METHOD_POST) {
     this.entity = entity;
     this.path = path;
     this.method = method;
