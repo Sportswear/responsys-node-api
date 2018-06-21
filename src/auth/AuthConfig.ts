@@ -1,17 +1,22 @@
 import * as config from 'config';
 import { ERROR } from '../Constants';
-
+import { CacheInterface } from '../cache/CacheInterface'
+import { FileSystemCache } from '../cache/FileSystemCache'
+import { MemoryCache } from '../cache/MemoryCache'
 
 export class AuthConfig {
-  static endpoint;
-  static username;
-  static password;
+  static caches = {MemoryCache, FileSystemCache};
 
-  static init(endpoint?: string, username?: string, password?: string) {
+  static endpoint: string;
+  static username: string;
+  static password: string;
+  static cache: CacheInterface;
 
+  static init(endpoint?: string, username?: string, password?: string, cache?: CacheInterface) {
     this.setEndpoint(endpoint);
     this.setPassword(password);
     this.setUsername(username);
+    this.setCache(cache);
 
     if (this.isDataValid()) {
       throw new Error(ERROR +
@@ -32,6 +37,10 @@ export class AuthConfig {
   static setPassword(password): void {
     this.password =
       password || config.get('auth.password') || process.env.RESPONSYS_PASSWORD;
+  }
+
+  static setCache(cache): void {
+    this.cache = cache || MemoryCache;
   }
 
   static isDataValid() : boolean {
