@@ -35,6 +35,5 @@ export const MERGER_RULE = {
 };
 
 export const FIELD_NAMES = [
-  'EMAIL_ADDRESS_',
-  ''
+  'EMAIL_ADDRESS_'
 ];
