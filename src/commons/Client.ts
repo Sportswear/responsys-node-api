@@ -1,4 +1,5 @@
 import * as errorCode from 'rest/interceptor/errorCode';
+import * as mime from 'rest/interceptor/mime';
 import * as rest from 'rest';
 import * as retry from 'rest/interceptor/retry';
 import * as timeout from 'rest/interceptor/timeout';
@@ -29,12 +30,13 @@ export class Client {
    */
   protected call(request: any): rest.ResponsePromise {
     const client = rest
-    .wrap(errorCode, this.options.errorOptions)
-    .wrap(retry, this.options.retryOptions)
-    .wrap(timeout, this.options.timeoutOptions)
-    .wrap(this.debugInterceptor)
-    .wrap(this.pathInterceptor)
-    .wrap(this.secureInterceptor);
+      .wrap(this.debugInterceptor)
+      .wrap(errorCode, this.options.errorOptions)
+      .wrap(mime)
+      .wrap(retry, this.options.retryOptions)
+      .wrap(timeout, this.options.timeoutOptions)
+      .wrap(this.pathInterceptor)
+      .wrap(this.secureInterceptor);
 
     return client(request);
   }

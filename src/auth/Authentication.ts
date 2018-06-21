@@ -30,8 +30,8 @@ export class Authentication {
   public signin(authRequest: AuthenticationRequest): rest.ResponsePromise {
     const client = rest
       .wrap(mime)
-      .wrap(this.debugInterceptor)
-      .wrap(this.authInterceptor);
+      .wrap(this.authInterceptor)
+      .wrap(this.debugInterceptor);
 
     return client(authRequest);
   }
@@ -46,8 +46,8 @@ export class Authentication {
     const client = rest
       .wrap(errorCode)
       .wrap(mime)
-      .wrap(this.debugInterceptor)
-      .wrap(this.authInterceptor);
+      .wrap(this.authInterceptor)
+      .wrap(this.debugInterceptor);
 
     return client(authRefresh);
   }

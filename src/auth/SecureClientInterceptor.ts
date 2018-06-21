@@ -13,12 +13,10 @@ export class SecureClientInterceptor {
     return interceptor({
       request: async (request, config, meta) => {
         if (!this.authCache.isLoaded()) {
-          const result = await this.authentication.signin(new AuthenticationRequest());
-          request.headers.Authorization = this.authCache.getToken();
-
-          return request;
+          await this.authentication.signin(new AuthenticationRequest());
         }
 
+        request.headers.Authorization = this.authCache.getToken();
         return request;
       },
 
@@ -26,7 +24,7 @@ export class SecureClientInterceptor {
         const status = response.status || { code: 408 };
         if (status.code === 401 || status.code === 403) {
           const request = response.request;
-          const result = await this.authentication.signin(new AuthenticationRequest());
+          await this.authentication.signin(new AuthenticationRequest());
           request.headers.Authorization = this.authCache.getToken();
 
           return meta.client(request);

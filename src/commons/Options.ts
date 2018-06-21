@@ -8,5 +8,4 @@ export class Options {
   public retryOptions = CLIENT_OPTIONS_RETRY;
   public timeoutOptions = { timeout: CLIENT_OPTIONS_TIME_OUT };
   public errorOptions = CLIENT_OPTIONS_ERROR;
-
 }
