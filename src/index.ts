@@ -1,6 +1,8 @@
 export { AuthConfig } from './auth/AuthConfig';
 export { Authentication } from './auth/Authentication';
 export { AuthenticationRequest } from './auth/AuthenticationRequest';
+export { Campaign } from './campaigns/Campaign';
+export { EmailCampaignRequest } from './campaigns/EmailCampaignRequest';
 export { Lists } from './lists/Lists';
 export { ListsRequest } from './lists/ListsRequest';
 export { MergeEmail } from './merge/MergeEmail';
@@ -8,6 +10,7 @@ export { MergeTriggerEmailRecordData } from './merge/MergeTriggerEmailRecordData
 export { MergeTriggerEmailRequest } from './merge/MergeTriggerEmailRequest';
 export { MergeTriggerRecordData } from './merge/MergeTriggerRecordData';
 export { OptionalData } from './send/OptionalData';
+export { PushCampaignRequest } from './campaigns/PushCampaignRequest';
 export { Recipient } from './send/Recipient';
 export { RecipientData } from './send/RecipientData';
 export { TriggerEmailMessage } from './send/TriggerEmailMessage';
