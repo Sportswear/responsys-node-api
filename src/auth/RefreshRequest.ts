@@ -1,15 +1,12 @@
-import * as config from 'config';
 import { Request } from '../commons/Request';
 import { AuthCache } from './AuthCache';
+import { AuthConfig } from './AuthConfig';
 import {
   CONTENT_TYPE_URLENCODED,
   TYPE_TOKEN
 } from '../Constants';
 
-const URL = config.get('auth.endPoint') as string;
-
 export class RefreshRequest extends Request {
-
   constructor(previousToken?: string) {
     const authCache = new AuthCache();
     const token = previousToken ? previousToken : authCache.getToken();
@@ -21,6 +18,6 @@ export class RefreshRequest extends Request {
 
     super({
       auth_type: TYPE_TOKEN
-    }, URL, header);
+    }, AuthConfig.endpoint, header);
   }
 }

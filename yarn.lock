@@ -15,11 +15,6 @@
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.0.4.tgz#fe86315d9a66827feeb16f73bc954688ec950e18"
   integrity sha512-cvU0HomQ7/aGDQJZsbtJXqBQ7w4J4TqLB0Z/h8mKrpRjfeZEvTbygkfJEb7fWdmwpIeDeFmIVwAEqS0OYuUv3Q==
 
-"@types/config@^0.0.33":
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/@types/config/-/config-0.0.33.tgz#2b256fe9744e9a3f913f551a9aa4660c41f28c4b"
-  integrity sha512-hoVW0qNMmhnBw14s25ROmY5TVXSB64iQlZldpoSKNtEydX5Mroyy5ZbquLnhh0VC4XlIw4kihMIOCIBSeVJhww==
-
 "@types/express-serve-static-core@*":
   version "4.0.57"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.57.tgz#3cd8ab4b11d5ecd70393bada7fc1c480491537dd"
@@ -251,14 +246,6 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-
-config@^1.28.1:
-  version "1.28.1"
-  resolved "https://registry.yarnpkg.com/config/-/config-1.28.1.tgz#7625d2a1e4c90f131d8a73347982d93c3873282d"
-  integrity sha1-diXSoeTJDxMdinM0eYLZPDhzKC0=
-  dependencies:
-    json5 "0.4.0"
-    os-homedir "1.0.2"
 
 content-disposition@0.5.2:
   version "0.5.2"
@@ -573,11 +560,6 @@ json-stringify-safe@^5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
-json5@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-0.4.0.tgz#054352e4c4c80c86c0923877d449de176a732c8d"
-  integrity sha1-BUNS5MTIDIbAkjh31EneF2pzLI0=
-
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
@@ -753,11 +735,6 @@ once@^1.3.0:
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
   dependencies:
     wrappy "1"
-
-os-homedir@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
-  integrity sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
 
 parse-passwd@^1.0.0:
   version "1.0.0"

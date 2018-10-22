@@ -1,4 +1,3 @@
-import * as config from 'config';
 import { ERROR } from '../Constants';
 import { CacheInterface } from '../cache/CacheInterface'
 import { FileSystemCache } from '../cache/FileSystemCache'
@@ -26,17 +25,17 @@ export class AuthConfig {
 
   static setEndpoint(endpoint): void {
     this.endpoint =
-      endpoint || config.get('auth.endPoint') || process.env.RESPONSYS_AUTH_ENDPOINT;
+      endpoint || process.env.RESPONSYS_AUTH_ENDPOINT;
   }
 
   static setUsername(username): void {
     this.username =
-      username || config.get('auth.username') || process.env.RESPONSYS_USERNAME;
+      username || process.env.RESPONSYS_USERNAME;
   }
 
   static setPassword(password): void {
     this.password =
-      password || config.get('auth.password') || process.env.RESPONSYS_PASSWORD;
+      password || process.env.RESPONSYS_PASSWORD;
   }
 
   static setCache(cache): void {
