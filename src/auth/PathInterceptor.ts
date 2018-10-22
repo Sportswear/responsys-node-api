@@ -13,7 +13,7 @@ export class PathInterceptor {
   }
 
   private addPath(request) {
-    if (!this.authCache.isLoaded()) {
+    if (!this.authCache.isValid()) {
       return Promise.reject('Authentication Missing: Cannot add endpoint to path.');
     }
 

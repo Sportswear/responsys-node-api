@@ -9,12 +9,14 @@ export class AuthConfig {
   static endpoint: string;
   static username: string;
   static password: string;
+  static expires: number;
   static cache: CacheInterface;
 
-  static init(endpoint?: string, username?: string, password?: string, cache?: CacheInterface) {
+  static init(endpoint?: string, username?: string, password?: string, expires?: number, cache?: CacheInterface) {
     this.setEndpoint(endpoint);
     this.setPassword(password);
     this.setUsername(username);
+    this.setExpires(expires);
     this.setCache(cache);
 
     if (this.isDataValid()) {
@@ -36,6 +38,11 @@ export class AuthConfig {
   static setPassword(password): void {
     this.password =
       password || process.env.RESPONSYS_PASSWORD;
+  }
+
+  static setExpires(expires): void {
+    this.expires =
+      expires || process.env.RESPONSYS_AUTH_EXPIRES || 60 * 60 * 1000;
   }
 
   static setCache(cache): void {

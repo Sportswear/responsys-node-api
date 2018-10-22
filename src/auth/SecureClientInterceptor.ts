@@ -12,7 +12,7 @@ export class SecureClientInterceptor {
   get() {
     return interceptor({
       request: async (request, config, meta) => {
-        if (!this.authCache.isLoaded()) {
+        if (!this.authCache.isValid()) {
           await this.authentication.signin(new AuthenticationRequest());
         }
 

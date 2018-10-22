@@ -1,6 +1,5 @@
 import { AuthConfig } from './AuthConfig';
 import { CacheInterface } from '../cache/CacheInterface';
-import { MemoryCache } from '../cache/MemoryCache'
 
 import {
   KEY_ENDPOINT,
@@ -40,8 +39,17 @@ export class AuthCache {
     return this.cache.get(KEY_ISSUED_AT);
   }
 
-  isLoaded(): boolean {
-    return this.getToken() != null;
+  isValid(): boolean {
+    if (!this.getToken()) {
+      return false;
+    }
+
+    const issuedAt = this.getIssued();
+    if (!issuedAt) {
+      return false;
+    }
+
+    return Date.now() - parseInt(issuedAt, 10) < AuthConfig.expires;
   }
 
   clear(): void {
